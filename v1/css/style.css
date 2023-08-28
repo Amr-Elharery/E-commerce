@@ -1,0 +1,72 @@
+/* Global Rules */
+:root {
+  --primary: #4a99d3;
+  --alt-Primary: #326c96;
+  --dark: #260041;
+  --gray: #848191;
+  --light: #f5f5f5;
+  --main-transition: 0.3s;
+}
+
+body {
+  direction: rtl;
+}
+
+.home {
+  height: 100vh;
+  background: linear-gradient(to bottom, #a8cce8, transparent 50%);
+}
+
+.home nav ul {
+  gap: 30px;
+}
+
+.home nav a {
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+
+.home nav a:hover,
+.home nav a.active {
+  color: #fff;
+  background-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .home header .container {
+    flex-direction: column;
+  }
+}
+
+/* Landing */
+.home .landing {
+  padding-top: 100px;
+  flex: 1;
+}
+
+.home .landing .text {
+  width: 500px;
+}
+.home .landing .phone-img img {
+  width: 200px;
+}
+
+@media (max-width: 768px) {
+  .home .landing {
+    padding-top: 50px;
+  }
+  .home .landing .container {
+    flex-direction: column;
+  }
+  .home .landing .text {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .home .landing .text a {
+    margin-inline: auto;
+    width: 50%;
+  }
+}
