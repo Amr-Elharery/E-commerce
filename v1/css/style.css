@@ -50,6 +50,16 @@ body {
 .home .landing .text {
   width: 500px;
 }
+.home .landing .text a {
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.home .landing .text a:hover {
+  background-color: var(--alt-Primary);
+}
 .home .landing .phone-img img {
   width: 200px;
 }
