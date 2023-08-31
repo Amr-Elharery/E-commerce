@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Tech</title>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Open+Sans:wght@400;700&family=Poppins:wght@300;600;700;900&family=Readex+Pro:wght@400;700&family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Style -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+
+    <!-- Global -->
+    <link rel="stylesheet" href="css/global.css" />
+    <!-- Main -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="home flex-column">
+      <header class="py-10">
+        <div class="container flex-between">
+          <div class="logo">
+            <a href="" class="c-primary bold fs-35">نيو تك</a>
+          </div>
+          <nav>
+            <ul class="flex-row">
+              <li>
+                <a href="index.html" class="c-black fs-20 btn active"
+                  >الرئيسية</a
+                >
+              </li>
+              <li>
+                <a href="#products-section" class="c-black fs-20 btn"
+                  >منتجاتنا</a
+                >
+              </li>
+              <li>
+                <a href="pages/contact.html" class="c-black fs-20 btn"
+                  >اتصل بنا</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="landing">
+        <div class="container flex-between flex-center">
+          <div class="text center-mobile">
+            <p class="fs-40 mobile-fs-30">
+              اهلا بك في نيو تك يمكنك تصفح موقعنا الالكتروني لشراء مستلزماتك
+            </p>
+            <p class="fs-25 c-gray mobile-fs-20">
+              يتوفر لدينا احدث أجهزة الهواتف و الشاشات لمشاهدة التلفاز او
+              البلايستيشن و يوجد لدينا أجهزة لابتوب و الكمبيوتر المكتبي.
+            </p>
+
+            <a
+              href="#products-section"
+              class="btn bg-primary c-white fs-20 mt-10 d-block txt-center w-fit"
+            >
+              تصفح منتجاتنا
+            </a>
+          </div>
+          <div class="phone-img">
+            <img src="images/phone.png" alt="phone" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="products-section" class="mt-80 p-relative">
+      <!-- Overlay -->
+      <div class="overlay" id="overlay"></div>
+      <div class="container">
+        <h2 class="main-heading">منتجاتنا</h2>
+
+        <div class="products grid-3 mt-80 gap-20 p-relative">
+          <!-- Payment -->
+          <div
+            id="payment"
+            class="payment p-absolute center-position p-20 rad-6"
+          >
+            <form id="payForm" class="p-relative flex-column gap-10">
+              <span class="close w-fit" id="close">
+                <i class="fa-solid fa-x"></i>
+              </span>
+
+              <div class="inp flex-column">
+                <label for="name">اسم المشترى</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="اسم المشترى"
+                />
+              </div>
+              <div class="inp flex-column">
+                <label for="name">رقم المحمول</label>
+                <input
+                  type="text"
+                  name="tel"
+                  id="tel"
+                  placeholder="*********201+"
+                  maxlength="13"
+                  minlength="13"
+                  pattern="\+201\d{9}"
+                />
+              </div>
+              <div class="inp flex-column">
+                <label for="name">العنوان</label>
+                <input
+                  type="text"
+                  name="address"
+                  id="address"
+                  placeholder="المحافظة - المدينة - المنطقة - الشارع"
+                />
+              </div>
+
+              <div class="icons flex-row">
+                <img src="images/master.png" alt="masterCard" />
+                <img src="images/visa.png" alt="visa" />
+                <img src="images/vcash.png" alt="vf cash" />
+              </div>
+
+              <div class="payInfo flex-column">
+                <div class="inp flex-column">
+                  <label for="number">رقم الكارت</label>
+                  <input
+                    type="text"
+                    name="number"
+                    id="number"
+                    placeholder="الرقم من الشمال"
+                  />
+                </div>
+                <div class="inp flex-column">
+                  <label for="number">تاريخ الانتهاء</label>
+                  <div class="flex-row date">
+                    <input
+                      type="text"
+                      name="dateY"
+                      id="dateY"
+                      placeholder="yy"
+                    />
+                    <input
+                      type="text"
+                      name="dateM"
+                      id="dateM"
+                      placeholder="mm"
+                    />
+                  </div>
+                </div>
+                <div class="inp flex-column">
+                  <label for="cvv">رقم الـ cvv</label>
+                  <input type="text" name="cvv" id="cvv" placeholder="CVV" />
+                </div>
+              </div>
+
+              <button class="btn bg-primary c-white fs-20 mt-10">دفع</button>
+            </form>
+          </div>
+
+          <div class="product rad-6 p-20">
+            <div class="image txt-center">
+              <img src="images/macbook-air.webp" alt="mac" />
+            </div>
+            <div class="title fs-20 mt-10">
+              ماك بوك اير 13 بوصة: شريحة ابل M1 مع وحدة معالجة مركزية 8 نواة
+              ووحدة معالجة رسومات جرافيكية 7 نواة، 8 جيجابايت، 256 جيجابايت -
+              ذهبي
+            </div>
+            <div class="mt-10 fs-25 flex-between align-center">
+              <span id="price">35,000 جنيه</span>
+              <div>
+                <button class="btn bg-primary c-white">أضف الى السلة</button>
+                <button class="btn bg-primary c-white buyNow">شراء الأن</button>
+              </div>
+            </div>
+          </div>
+          <div class="product rad-6 p-20">
+            <div class="image txt-center">
+              <img src="images/macbook-air.webp" alt="mac" />
+            </div>
+            <div class="title fs-20 mt-10">
+              ماك بوك اير 13 بوصة: شريحة ابل M2 مع وحدة معالجة مركزية 10 نواة
+              ووحدة معالجة رسومات جرافيكية 8 نواة، 16 جيجابايت، 512 جيجابايت -
+              ذهبي
+            </div>
+            <div class="mt-10 fs-25 flex-between align-center">
+              <span id="price">48,000 جنيه</span>
+              <div>
+                <button class="btn bg-primary c-white">أضف الى السلة</button>
+                <button class="btn bg-primary c-white buyNow">شراء الأن</button>
+              </div>
+            </div>
+          </div>
+          <div class="product rad-6 p-20">
+            <div class="image txt-center">
+              <img src="images/macbook-pro.webp" alt="mac" />
+            </div>
+            <div class="title fs-20 mt-10">
+              ماك بوك برو 16 بوصة: شريحة ابل M1 مع وحدة معالجة مركزية 8 نواة
+              ووحدة معالجة رسومات جرافيكية 8 نواة، 16 جيجابايت، 512 جيجابايت -
+              فضي
+            </div>
+            <div class="mt-10 fs-25 flex-between align-center">
+              <span id="price">50,000 جنيه</span>
+              <div>
+                <button class="btn bg-primary c-white">أضف الى السلة</button>
+                <button class="btn bg-primary c-white buyNow">شراء الأن</button>
+              </div>
+            </div>
+          </div>
+          <div class="product rad-6 p-20">
+            <div class="image txt-center">
+              <img src="images/iphone-14-pro-max.webp" alt="mac" />
+            </div>
+            <div class="title fs-20 mt-10">
+              ابل ايفون 14 برو ماكس الجديد (256 جيجابايت) - اسود
+            </div>
+            <div class="mt-10 fs-25 flex-between align-center">
+              <span id="price">35,000 جنيه</span>
+              <div>
+                <button class="btn bg-primary c-white">أضف الى السلة</button>
+                <button class="btn bg-primary c-white buyNow">شراء الأن</button>
+              </div>
+            </div>
+          </div>
+          <div class="product rad-6 p-20">
+            <div class="image txt-center">
+              <img src="images/iphone-13.webp" alt="mac" />
+            </div>
+            <div class="title fs-20 mt-10">
+              ابل ايفون 13 الجديد (128 جيجابايت) - ازرق
+            </div>
+            <div class="mt-10 fs-25 flex-between align-center">
+              <span id="price">25,000 جنيه</span>
+              <div>
+                <button class="btn bg-primary c-white">أضف الى السلة</button>
+                <button class="btn bg-primary c-white buyNow">شراء الأن</button>
+              </div>
+            </div>
+          </div>
+          <div class="product rad-6 p-20">
+            <div class="image txt-center">
+              <img src="images/playstation-5.webp" alt="mac" />
+            </div>
+            <div class="title fs-20 mt-10">
+              بلايستيشن 5 الجديد أبيض + وحدة تحكم هدية
+            </div>
+            <div class="mt-10 fs-25 flex-between align-center">
+              <span id="price">20,000 جنيه</span>
+              <div>
+                <button class="btn bg-primary c-white">أضف الى السلة</button>
+                <button class="btn bg-primary c-white buyNow">شراء الأن</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ابل ايفون 14 الجديد (128 جيجابايت) - ازرق -->
+    <script src="js/index.js"></script>
+  </body>
+</html>
