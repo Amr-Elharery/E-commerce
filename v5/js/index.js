@@ -74,7 +74,7 @@ const renderProducts = () => {
               ${product.title}
               </div>
               <div class="mt-10 fs-25 flex-between align-center">
-                <span class="price">${product.price.toLocaleString()} جنيه</span>
+                <span class="price" onclick="hello('Amr')">${product.price.toLocaleString()} جنيه</span>
                 <div>
                   <button class="btn bg-primary c-white addToCartBtn" data-item='${JSON.stringify(
                     product
@@ -126,8 +126,6 @@ const cartLenght = document.getElementById("cartLength");
 const cartTotal = document.getElementById("total");
 let total = 0;
 
-cartLenght.innerHTML = cart.length;
-
 closeCart.addEventListener("click", () => {
   cartDiv.style.right = "-100%";
 });
@@ -138,6 +136,7 @@ openCart.addEventListener("click", () => {
 reset.addEventListener("click", () => {
   localStorage.clear();
   cart = JSON.parse(localStorage.getItem("products")) || [];
+  total = 0;
 
   displayCartContent();
 });
@@ -145,24 +144,10 @@ reset.addEventListener("click", () => {
 addToCartBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     addToLocalStorage(JSON.parse(btn.getAttribute("data-item")));
-    // addToCart(JSON.parse(btn.getAttribute("data-item")));
     cartDiv.style.right = "0";
   });
 });
 
-// const addToCart = (product) => {
-//   let exist = cart.find((p) => p.id === product.id);
-//   if (exist !== undefined) {
-//     exist.quantity++;
-//     cart = cart.filter((p) => p.id !== exist.id);
-//     cart.push(exist);
-//   } else {
-//     cart.push(product);
-//   }
-
-//   displayCartContent();
-//   cartLenght.innerHTML = cart.length;
-// };
 const addToLocalStorage = (product) => {
   let storageCart = JSON.parse(localStorage.getItem("products")) || [];
   let exist = storageCart.find((p) => p.id === product.id);
@@ -179,51 +164,132 @@ const addToLocalStorage = (product) => {
   cart = JSON.parse(localStorage.getItem("products"));
 
   displayCartContent();
-  cartLenght.innerHTML = cart.length;
 };
 
 function displayCartContent() {
   cartContent.innerHTML = "";
   total = 0;
   cartTotal.innerHTML = total.toLocaleString();
-
+  cartLenght.innerHTML = cart.length;
   if (cart.length > 0) {
     cart.forEach((product) => {
-      const productDiv = document.createElement("div");
-      productDiv.classList.add("product");
-      productDiv.innerHTML = `
-        <div class="image">
-          <img alt="product" src="images/${product.img}" />
-        </div>
-        <div class="title">${product.title}</div>
-        <div class="price mt-10">${product.price.toLocaleString()} جنيه </div>
-  
-        <div>الكمية : ${product.quantity}</div>
-  
-        <div class="btns mt-10">
-          <button class="btn c-white bg-primary changeQuantity" data-item="${JSON.stringify(
-            product
-          )}" onclick="handleChangeQuantity()">+</button>
-  
-          <button class="btn c-white bg-primary changeQuantity" data-item="${JSON.stringify(
-            product
-          )}" onclick="handleChangeQuantity()">-</button>
-        </div>
-      `;
+      if (product) {
+        const productDiv = document.createElement("div");
+        productDiv.classList.add("product");
+        productDiv.innerHTML = `
+          <div class="image">
+            <img alt="product" src="images/${product.img}" />
+          </div>
+          <div class="title">${product.title}</div>
+          <div class="price mt-10">${product.price.toLocaleString()} جنيه </div>
+    
+          <div>الكمية : ${product.quantity}</div>
+    
+          <div class="btns mt-10">
+            <button class="btn c-white bg-primary changeQuantityPlus" data-item='${JSON.stringify(
+              product
+            )}' >+</button>
+    
+            <button class="btn c-white bg-primary changeQuantityMines" data-item='${JSON.stringify(
+              product
+            )}'  >-</button>
+          </div>
+        `;
 
-      cartContent.appendChild(productDiv);
-      total += product.quantity * product.price;
-      cartTotal.innerHTML = total.toLocaleString();
+        cartContent.appendChild(productDiv);
+        total += product.quantity * product.price;
+        cartTotal.innerHTML = total.toLocaleString();
+      }
+    });
+
+    let changeQuantityPlusBtns = document.querySelectorAll(
+      ".changeQuantityPlus"
+    );
+    let changeQuantityMinesBtns = document.querySelectorAll(
+      ".changeQuantityMines"
+    );
+
+    changeQuantityPlusBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        let product = JSON.parse(btn.getAttribute("data-item"));
+        addToLocalStorage(product);
+      });
+    });
+
+    changeQuantityMinesBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        let product = JSON.parse(btn.getAttribute("data-item"));
+        let storageCart = JSON.parse(localStorage.getItem("products")) || [];
+        let index;
+        storageCart = storageCart.map((p, i) => {
+          if (p.id === product.id) {
+            p.quantity--;
+            if (p.quantity === 0) {
+              index = i;
+            }
+          }
+          return p;
+        });
+
+        if (index >= 0) {
+          console.log(index);
+          storageCart.splice(index, 1);
+        }
+
+        localStorage.setItem("products", JSON.stringify(storageCart));
+
+        cart = JSON.parse(localStorage.getItem("products"));
+
+        displayCartContent();
+      });
     });
   }
 }
 
 displayCartContent();
 
-// Staaaay + - and
-function handleChangeQuantity() {
-  const changeQuantityBtns = document.querySelectorAll(".changeQuantity");
-  console.log(changeQuantityBtns);
+// Staaay
+
+// let changeQuantityPlusBtns = document.querySelectorAll(".changeQuantityPlus");
+// let changeQuantityMinesBtns = document.querySelectorAll(".changeQuantityMines");
+
+// changeQuantityPlusBtns.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     console.log("true");
+//     let product = btn.getAttribute("data-item");
+//     // let storageCart = JSON.parse(localStorage.getItem("products")) || [];
+//     // storageCart = storageCart.map((p) => {
+//     //   if (p.id === product.id) {
+//     //     console.log("Plus");
+//     //     p.quantity++;
+//     //   }
+//     // });
+//     addToLocalStorage(JSON.parse(btn.getAttribute("data-item")));
+//   });
+// });
+
+// changeQuantityMinesBtns.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     console.log(true);
+//     let product = btn.getAttribute("data-item");
+//     let storageCart = JSON.parse(localStorage.getItem("products")) || [];
+//     storageCart = storageCart.map((p, i) => {
+//       if (p.id === product.id) {
+//         p.quantity--;
+//         p.quantity === 0 ? storageCart.splice(i, 1) : null;
+//       }
+//     });
+
+//     localStorage.setItem("products", JSON.stringify(storageCart));
+
+//     cart = JSON.parse(localStorage.getItem("products"));
+
+//     displayCartContent();
+//   });
+// });
+
+function add() {
+  console.log("123");
 }
 
 export { products, cart };
