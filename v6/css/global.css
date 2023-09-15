@@ -193,6 +193,13 @@ img {
   background-color: var(--gray);
 }
 
+.bg-light {
+  background-color: var(--light);
+}
+.bg-white {
+  background-color: #fff;
+}
+
 .c-primary {
   color: var(--primary);
 }
@@ -342,6 +349,11 @@ img {
 }
 .w-fit {
   width: fit-content;
+}
+
+/* Cursor */
+.pointer {
+  cursor: pointer;
 }
 
 /* Media */

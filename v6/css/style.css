@@ -118,6 +118,14 @@ nav a.active {
     flex-direction: column;
     gap: 20px;
   }
+  header .container ul {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  header .container ul a {
+    font-size: 16px;
+    padding: 5px 8px;
+  }
 }
 
 /* Landing */
