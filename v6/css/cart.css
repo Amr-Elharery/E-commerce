@@ -4,6 +4,7 @@
 
 .responsive-table {
   overflow-x: auto;
+  max-width: 100%;
 }
 .responsive-table::-webkit-scrollbar {
   height: 5px;
