@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Signup</title>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,40 +21,45 @@
     <!-- Main -->
     <link rel="stylesheet" href="../css/style.css" />
     <!-- Specific style -->
-    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/signup.css" />
   </head>
   <body>
     <div class="home flex-column">
       <header class="py-10">
         <div class="container flex-between">
           <div class="logo">
-            <a href="/" class="c-primary bold fs-35">نيو تك</a>
+            <a href="" class="c-primary bold fs-35">New Tech</a>
           </div>
           <nav>
             <ul class="flex-row">
               <li>
-                <a href="../index.html" class="c-black fs-20 btn">الرئيسية</a>
+                <a href="../index.html" class="c-black fs-20 btn">Home</a>
               </li>
               <li>
                 <a
                   href="../index.html#products-section"
                   class="c-black fs-20 btn"
-                  >منتجاتنا</a
+                  >Products</a
                 >
               </li>
               <li>
-                <a href="#" class="c-black fs-20 btn">السلة</a>
+                <a href="cart.html" class="c-black fs-20 btn">Cart</a>
               </li>
               <li>
-                <a href="contact.html" class="c-black fs-20 btn">اتصل بنا</a>
+                <a href="contact.html" class="c-black fs-20 btn">Contact</a>
               </li>
               <li>
-                <a href="login.html" class="c-black fs-20 btn active"
-                  >تسجيل الدخول</a
+                <a href="login.html" class="c-black fs-20 btn">Login</a>
+              </li>
+              <li>
+                <a href="signup.html" class="c-black fs-20 btn active"
+                  >Sign up</a
                 >
               </li>
               <li>
-                <a href="signup.html" class="c-black fs-20 btn">انشاء حساب</a>
+                <a href="../index.html" class="c-primary fs-20 btn">
+                  <i class="fa-solid fa-globe"></i>
+                </a>
               </li>
             </ul>
           </nav>
@@ -64,11 +69,11 @@
       <div class="form mt-80">
         <div class="container flex-center">
           <form
-            name="loginForm"
-            id="loginForm"
-            class="loginForm p-20 rad-6 flex-column"
+            name="signupForm"
+            id="signupForm"
+            class="signupForm p-20 rad-6 flex-column"
           >
-            <h2>تسجيل الدخول</h2>
+            <h2>Create account</h2>
 
             <div class="input-group p-relative">
               <i class="fa-solid fa-user p-absolute"></i>
@@ -76,7 +81,18 @@
                 type="text"
                 name="name"
                 id="name"
-                placeholder="اسم المستخدم"
+                placeholder="User name"
+                class="p-10 rad-6"
+              />
+            </div>
+            <!-- New Group -->
+            <div class="input-group p-relative">
+              <i class="fa-solid fa-envelope p-absolute"></i>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
                 class="p-10 rad-6"
               />
             </div>
@@ -87,19 +103,28 @@
                 type="password"
                 name="password"
                 id="password"
-                placeholder="كلمة المرور"
+                placeholder="Password"
+                class="p-10 rad-6"
+              />
+            </div>
+            <!-- New Group -->
+            <div class="input-group p-relative">
+              <i class="fa-solid fa-lock p-absolute"></i>
+              <input
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                placeholder="Confirm password"
                 class="p-10 rad-6"
               />
             </div>
 
-            <div class="forget mx-auto pointer">
-              <p>هل نسيت كلمة المرور؟</p>
-            </div>
-
-            <div class="btns flex-row flex-between">
-              <button class="btn bg-primary c-white fs-15">الدخول</button>
+            <div class="btns flex-row flex-between mt-20">
               <button class="btn bg-primary fs-15">
-                <a href="signup.html" class="c-white">انشاء حساب</a>
+                <a href="login.html" class="c-white">Have account ?</a>
+              </button>
+              <button class="btn bg-primary c-white fs-15">
+                Create account
               </button>
             </div>
           </form>
@@ -107,6 +132,6 @@
       </div>
     </div>
 
-    <script src="../js/login.js"></script>
+    <script src="../js/signup.js"></script>
   </body>
 </html>

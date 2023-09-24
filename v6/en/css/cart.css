@@ -1,0 +1,50 @@
+.cartTable {
+  padding-top: 80px;
+}
+
+.responsive-table {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.responsive-table::-webkit-scrollbar {
+  height: 5px;
+}
+.cartTable table {
+  min-width: 800px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  border-spacing: 0;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.cartTable table thead {
+  border-radius: 10px;
+}
+.cartTable table td {
+  padding: 15px;
+}
+.cartTable table thead {
+  font-weight: bold;
+  font-size: 20px;
+}
+.cartTable table thead tr td {
+  background-color: #eee;
+}
+
+.cartTable table tr:not(:last-child) td:not(:first-child) {
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+.cartTable table tr:not(:last-child) td:first-child {
+  border-bottom: 1px solid #eee;
+}
+.cartTable table tr:last-child td:not(:first-child) {
+  border-right: 1px solid #eee;
+}
+
+.cartTable table tr img {
+  width: 80px;
+}
