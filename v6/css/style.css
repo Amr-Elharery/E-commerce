@@ -147,9 +147,6 @@ nav a.active {
 .home .landing .text a:hover {
   background-color: var(--alt-Primary);
 }
-.home .landing .phone-img img {
-  width: 200px;
-}
 
 @media (max-width: 768px) {
   .home .landing {
