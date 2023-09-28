@@ -57,6 +57,35 @@ let products = [
     price: 20000,
     quantity: 1,
   },
+  {
+    id: 7,
+    img: "computer.webp",
+    title: `
+    Dell Optiplex Core i7 9010MT Computer with 18.5-inch Widescreen LED Display (E1912H)
+    `,
+    price: 5000,
+    quantity: 1,
+  },
+  {
+    id: 8,
+    img: "samsung.webp",
+    title: `
+    Samsung Galaxy S22 Plus 5G mobile phone, with a capacity of 256 GB
+    `,
+
+    price: 30000,
+    quantity: 1,
+  },
+  {
+    id: 9,
+    img: "screen.webp",
+    title: `
+    Samsung 24 Inch IPS Full HD LED Monitor 75Hz, AMD FreeSync Borderless
+    `,
+
+    price: 3500,
+    quantity: 1,
+  },
 ];
 
 let productsDiv = document.getElementById("products");

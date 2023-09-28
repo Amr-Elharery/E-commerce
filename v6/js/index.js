@@ -57,6 +57,36 @@ let products = [
     price: 20000,
     quantity: 1,
   },
+  {
+    id: 7,
+    img: "computer.webp",
+    title: `
+    كمبيوتر ديل اوبتيبلكس بمعالج كورi7 9010MT مع شاشة ليد عريضة بمقاس 18.5 بوصة (E1912H)
+    
+    `,
+    price: 5000,
+    quantity: 1,
+  },
+  {
+    id: 8,
+    img: "samsung.webp",
+    title: `
+    موبايل سامسونج جالاكسي S22 بلس 5G، بسعة 256 جيجابايت
+    `,
+
+    price: 30000,
+    quantity: 1,
+  },
+  {
+    id: 9,
+    img: "screen.webp",
+    title: `
+    شاشة سامسونج 24 بوصة اي بي اس فل اتش دي ال اي دي 75 هرتز، ايه ام دي فري سينك بوردرليس
+    `,
+
+    price: 3500,
+    quantity: 1,
+  },
 ];
 
 let productsDiv = document.getElementById("products");
@@ -246,4 +276,3 @@ function displayCartContent() {
 }
 
 displayCartContent();
-
